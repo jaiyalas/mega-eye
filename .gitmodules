@@ -1,0 +1,9 @@
+[submodule "SFML"]
+	path = SFML
+	url = git@github.com:jaiyalas/SFML.git
+[submodule "SpriterPlusPlus"]
+	path = SpriterPlusPlus
+	url = git@github.com:jaiyalas/SpriterPlusPlus.git
+[submodule "spine-runtimes"]
+	path = spine-runtimes
+	url = git@github.com:jaiyalas/spine-runtimes.git
