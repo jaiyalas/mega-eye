@@ -36,7 +36,11 @@ resolver: lts-8.12
 # non-dependency (i.e. a user package), and its test suites and benchmarks
 # will not be run. This is useful for tweaking upstream packages.
 packages:
-- '.'
+- location: '.'
+- location:
+    git: git@github.com:jaiyalas/SFML.git
+    commit: f6e749a15a2aa6b8b720dd535ea583a2a7429bb8
+
 # Dependency packages to be pulled from upstream that are not in the resolver
 # (e.g., acme-missiles-0.3)
 extra-deps: []
@@ -59,8 +63,8 @@ extra-package-dbs: []
 # arch: x86_64
 #
 # Extra directories used by stack for building
-# extra-include-dirs: [/path/to/dir]
-# extra-lib-dirs: [/path/to/dir]
+# extra-include-dirs:
+# extra-lib-dirs:
 #
 # Allow a newer minor version of GHC than the snapshot specifies
 # compiler-check: newer-minor
