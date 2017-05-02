@@ -63,8 +63,15 @@ extra-package-dbs: []
 # arch: x86_64
 #
 # Extra directories used by stack for building
-# extra-include-dirs:
-# extra-lib-dirs:
+extra-include-dirs:
+- /usr/local/Cellar/csfml/2.4/include/
+- /usr/local/Cellar/sfml/2.4.2/include/
+
+extra-lib-dirs:
+- /usr/local/Cellar/csfml/2.4/lib
+- /usr/local/Cellar/sfml/2.4.2/lib
+
+
 #
 # Allow a newer minor version of GHC than the snapshot specifies
 # compiler-check: newer-minor
