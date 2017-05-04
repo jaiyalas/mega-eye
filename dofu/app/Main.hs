@@ -4,18 +4,41 @@ import Lib
 import SFML.Window
 import SFML.Graphics
 
+import Control.Monad
+
+-- this is necessary for getDataFileName
+import Paths_dofu
+
+foo x = do
+    y <- x
+    putStrLn y
+
 main :: IO ()
 main = do
+    t1 <- getDataFileName "img/look.jpg"
+    putStrLn t1
     let ctxSettings = Just $ ContextSettings 24 8 0 1 2 [ContextDefault]
     wnd <- createRenderWindow (VideoMode 550 690 32) "SFML Haskell Demo" [SFDefaultStyle] ctxSettings
-    tex <- err $ textureFromFile "/Users/jaiyalas/Downloads/look.jpg" Nothing
+    tex <- err $ textureFromFile t1 Nothing
     spr <- err $ createSprite
     setTexture spr tex True
     loop wnd spr
     destroy spr
     destroy tex
     destroy wnd
-    --
+
+-- main2 :: IO ()
+-- main2 = mapM_ foo
+--     [ getBinDir
+--     , getLibDir
+--     , getDynLibDir
+--     , getDataDir
+--     , getLibexecDir
+--     , getSysconfDir
+--     ]
+
+
+    -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
     -- desktopMode <- getDesktopMode
     -- fsModes <- getFullscreenModes
     --
