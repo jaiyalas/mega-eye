@@ -1,0 +1,62 @@
+name:                spine-haskell
+version:             0.1.0.0
+-- synopsis:
+-- description:
+homepage:            https://github.com/githubuser/spine-haskell#readme
+license:             BSD3
+license-file:        LICENSE
+author:              Author name here
+maintainer:          example@example.com
+copyright:           2017 Author name here
+category:            Web
+build-type:          Simple
+cabal-version:       >=1.10
+extra-source-files:  README.md
+
+library
+    ghc-options: -Wall
+    exposed-modules:
+        Spine-c
+    hs-source-dirs:      src
+    default-language:    Haskell2010
+    build-depends:
+        base           >= 4.7 && < 5
+    includes:
+        spine-c/spine-c/include/spine/Animation.h
+        spine-c/spine-c/include/spine/AnimationState.h
+        spine-c/spine-c/include/spine/AnimationStateData.h
+        spine-c/spine-c/include/spine/Atlas.h
+        spine-c/spine-c/include/spine/AtlasAttachmentLoader.h
+        spine-c/spine-c/include/spine/Attachment.h
+        spine-c/spine-c/include/spine/AttachmentLoader.h
+        spine-c/spine-c/include/spine/Bone.h
+        spine-c/spine-c/include/spine/BoneData.h
+        spine-c/spine-c/include/spine/BoundingBoxAttachment.h
+        spine-c/spine-c/include/spine/Event.h
+        spine-c/spine-c/include/spine/EventData.h
+        spine-c/spine-c/include/spine/IkConstraint.h
+        spine-c/spine-c/include/spine/IkConstraintData.h
+        spine-c/spine-c/include/spine/MeshAttachment.h
+        spine-c/spine-c/include/spine/PathAttachment.h
+        spine-c/spine-c/include/spine/PathConstraint.h
+        spine-c/spine-c/include/spine/PathConstraintData.h
+        spine-c/spine-c/include/spine/RegionAttachment.h
+        spine-c/spine-c/include/spine/Skeleton.h
+        spine-c/spine-c/include/spine/SkeletonBinary.h
+        spine-c/spine-c/include/spine/SkeletonBounds.h
+        spine-c/spine-c/include/spine/SkeletonData.h
+        spine-c/spine-c/include/spine/SkeletonJson.h
+        spine-c/spine-c/include/spine/Skin.h
+        spine-c/spine-c/include/spine/Slot.h
+        spine-c/spine-c/include/spine/SlotData.h
+        spine-c/spine-c/include/spine/TransformConstraint.h
+        spine-c/spine-c/include/spine/TransformConstraintData.h
+        spine-c/spine-c/include/spine/VertexAttachment.h
+        spine-c/spine-c/include/spine/extension.h
+        spine-c/spine-c/include/spine/spine.h
+    extra-lib-dirs:
+        spine-haskell/spine-c/build/
+    extra-libraries:
+        spine-c -- Spine 3.5.xx.
+    -- pkgconfig-depends:
+    --     SDL2_image >= 2.0.0
