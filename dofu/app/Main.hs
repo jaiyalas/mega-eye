@@ -9,12 +9,9 @@ import Control.Monad
 -- this is necessary for getDataFileName
 import Paths_dofu
 
-foo x = do
-    y <- x
-    putStrLn y
-
 main :: IO ()
 main = do
+    main2
     t1 <- getDataFileName "img/look.jpg"
     putStrLn t1
     let ctxSettings = Just $ ContextSettings 24 8 0 1 2 [ContextDefault]
@@ -27,15 +24,16 @@ main = do
     destroy tex
     destroy wnd
 
--- main2 :: IO ()
--- main2 = mapM_ foo
---     [ getBinDir
---     , getLibDir
---     , getDynLibDir
---     , getDataDir
---     , getLibexecDir
---     , getSysconfDir
---     ]
+main2 :: IO ()
+main2 = mapM_ ((=<<) putStrLn)
+    [ ( return $ show version )
+    , getBinDir
+    , getLibDir
+    , getDynLibDir
+    , getDataDir
+    , getLibexecDir
+    , getSysconfDir
+    ]
 
 
     -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
