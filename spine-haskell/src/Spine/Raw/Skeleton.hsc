@@ -3,8 +3,9 @@
 --
 module Spine.Raw.Skeleton where
 --
-#include "Skeleton.h"
+#include "spine/Animation.h"
 --
 import Foreign.C.Types
 --
-pattern IMG_INIT_JPG = (#const IMG_INIT_JPG) :: IIFlag
+
+pattern AA = (#const SP_TIMELINE_ROTATE) :: CInt
